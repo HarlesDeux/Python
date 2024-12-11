@@ -25,16 +25,29 @@ print('Premium Flat Rate:','$', premium_flat_rate)
 #Drone Shipping
 
 if weight <= 2 :
-  cost_ground = weight * 4.5
+  cost_drone = weight * 4.5
 
 elif weight >= 2.01 and weight <= 6:
-  cost_ground = weight * 9.0
+  cost_drone = weight * 9.0
 
 elif weight >= 6.01 and weight <= 10:
-  cost_ground = weight * 12.0
+  cost_drone = weight * 12.0
 
 else:
-  cost_ground = weight *14.25
+  cost_drone = weight *14.25
 
-print('Total Drone Cost:', '$', cost_ground)
+print('Total Drone Cost:', '$', cost_drone)
+
+#Cheaptest Method Calculator
+
+cheapest_method = min(cost_ground, premium_flat_rate, cost_drone)
+
+if cheapest_method == cost_ground:
+  print('Cheapest Method: Ground Shipping - $', cost_ground)
+
+elif cheapest_method == premium_flat_rate:
+  print('Cheapest Method: Premium Flat Rate - $', premium_flat_rate)
+
+else:
+  print('Cheapest Method: Drone - $', cost_drone)
 
